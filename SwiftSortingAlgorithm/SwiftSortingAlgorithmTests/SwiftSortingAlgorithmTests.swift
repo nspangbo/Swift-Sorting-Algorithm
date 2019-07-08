@@ -48,7 +48,10 @@ class SwiftSortingAlgorithmTests: XCTestCase {
         assert(sortedData == testData.sorted())
     }
     
-    func testSelectionSort() {}
+    func testSelectionSort() {
+        let sortedData = selectionSort(testData)
+        assert(sortedData == testData.sorted())
+    }
     
     func testShellSort() {}
     

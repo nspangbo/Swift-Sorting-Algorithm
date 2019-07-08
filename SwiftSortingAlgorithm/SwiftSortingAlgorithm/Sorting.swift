@@ -51,6 +51,15 @@ func insertionSort(_ nums: [Int]) -> [Int] {
 
 func selectionSort(_ nums: [Int]) -> [Int] {
     var newNums = nums
+    for boundary in newNums.startIndex ..< newNums.endIndex {
+        var minPosition = boundary
+        for index in boundary ..< newNums.endIndex {
+            if newNums[index] < newNums[minPosition] {
+                minPosition = index
+            }
+        }
+        (newNums[boundary], newNums[minPosition]) = (newNums[minPosition], newNums[boundary])
+    }
     
     return newNums
 }
