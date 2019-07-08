@@ -38,6 +38,13 @@ func slowSort(_ nums: [Int]) -> [Int] {
 
 func insertionSort(_ nums: [Int]) -> [Int] {
     var newNums = nums
+    for boundary in newNums.startIndex+1 ..< newNums.endIndex {
+        var index = boundary
+        while index > 0 && newNums[index] < newNums[index-1] {
+            (newNums[index], newNums[index-1]) = (newNums[index-1], newNums[index])
+            index -= 1
+        }
+    }
     
     return newNums
 }

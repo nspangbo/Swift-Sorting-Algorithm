@@ -16,7 +16,7 @@ class SwiftSortingAlgorithmTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         for _ in 0 ..< 100 {
-            testData.append(Int(arc4random()))
+            testData.append(Int(arc4random() % 100))
         }
     }
 
@@ -43,7 +43,10 @@ class SwiftSortingAlgorithmTests: XCTestCase {
     
     func testSlowSort() {}
     
-    func testInsertionSort() {}
+    func testInsertionSort() {
+        let sortedData = insertionSort(testData)
+        assert(sortedData == testData.sorted())
+    }
     
     func testSelectionSort() {}
     
