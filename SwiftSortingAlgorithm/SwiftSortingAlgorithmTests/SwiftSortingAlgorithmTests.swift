@@ -36,26 +36,29 @@ class SwiftSortingAlgorithmTests: XCTestCase {
         }
     }
     
+    func checkResult(_ result: [Int]) {
+        assert(result == testData.sorted())
+    }
+    
     func testBubbleSort() {
-        let sortedData = bubbleSort(testData)
-        assert(sortedData == testData.sorted())
+        checkResult(bubbleSort(testData))
     }
     
     func testSlowSort() {}
     
     func testInsertionSort() {
-        let sortedData = insertionSort(testData)
-        assert(sortedData == testData.sorted())
+        checkResult(insertionSort(testData))
     }
     
     func testSelectionSort() {
-        let sortedData = selectionSort(testData)
-        assert(sortedData == testData.sorted())
+        checkResult(selectionSort(testData))
     }
     
     func testShellSort() {}
     
-    func testQuickSort() {}
+    func testQuickSort() {
+        checkResult(quickSort(testData))
+    }
     
     func testMergeSort() {}
     
